@@ -1,7 +1,7 @@
 #language:pt
 
 Funcionalidade: Login
-
+@login
 Cenario: Login com sucesso
   Dado que o usuário acesse a tela de login
   Quando todas as informações de login forem preenchidas corretamente

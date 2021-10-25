@@ -1,0 +1,9 @@
+[caps]
+platformName = 'Android'
+deviceName = 'RQ8R604ZVXM'
+app = '/Users/carlos.bonfatti/Merci---Automation_Mobile/Merci_automation_mobile/apps/apk/dock-sandbox-debug.apk'
+appPackage = 'app.wl.oscar.sandbox'
+appActivity = 'kit.merci.wl.ui.splash.SplashActivity'
+automationName = 'UiAutomator2'
+
+  
