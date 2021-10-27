@@ -1,15 +1,13 @@
-# #language: pt
+#language: pt
 
-# @not_automated
-# Funcionalidade: Sacar dinheiro com usuário deslogado
+Funcionalidade: Sacar dinheiro com usuário deslogado
 
-# Contexto:
-# Dado que o usuário acesse a tela de login
-# Quando acessar a funcionalidade Sacar no menu inferior
+Contexto:
+Dado que o usuário acesse a tela de login
+Quando acessar a funcionalidade Sacar no menu inferior
 
-# @SEVERITY:CRITICAL
-# Cenario: Acesso à funcionalidade
-# Entao deverão ser exibidas as informações para saque
+Cenario: Acesso à funcionalidade
+Entao deverão ser exibidas as informações para saque
 
 # @SEVERITY:CRITICAL
 # Cenario: Exibição de lojas para saque

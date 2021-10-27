@@ -1,16 +1,11 @@
-
-
-
-Quando('todas as informações de login forem preenchidas corretamente') do
-  @user = select_user('with_digital_account')
-  find_element(@screen.login.input_cpf).send_keys(@user['cpf'])
-  find_element(@screen.login.input_phone).send_keys(@user['phone_number'])
-  find_element(@screen.login.btn_continue).click
-  @screen.login.fill_sms
-  find_element(@screen.login.input_password).send_keys(@user['password'])
+Quando('todas as informações de login {string} forem preenchidas porem o sms incorreto') do |dado|
+  file = YAML.load_file(File.join(Dir.pwd, "/features/support/config/environments/environmentsAndroid/login.yml"))
+  @dice = file[dado]
+  @screen.login.login_success(@dice)
+  @screen.login.fill_sms(@dice)
+  @screen.login.password(@dice)
+end
+Entao('o usuario vera a mensagem {string}') do |string|
+  expect(@sidebar.logged_user).to eql expect_name
 end
 
-Entao('o usuário deverá ser direcionado para a área logada') do
-  WaitingHelpers.wait_for_element_be_displayed(wallet.card_view)
-  expect(find_element(wallet.card_view).displayed?).to be true
-end
