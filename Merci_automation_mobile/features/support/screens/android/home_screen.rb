@@ -14,6 +14,7 @@ class HomeScreen
   end
 
   def access_permission
+    # BaseHelpers.click_id(@btn_permission)
     find_element(@btn_permission).click
   end
 
