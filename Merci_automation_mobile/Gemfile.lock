@@ -162,7 +162,6 @@ DEPENDENCIES
   capybara
   chromedriver-helper
   cucumber (= 5.2)
-  faker
   page-object
   pry
   rspec
