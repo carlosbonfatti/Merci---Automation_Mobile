@@ -1,4 +1,5 @@
 class LoginScreen
+  # include Capybara::DSL
   attr_accessor :input_cpf, :input_phone, :btn_continue,
                 :input_sms, :input_password, :btn_forgot_password
 
@@ -9,10 +10,13 @@ class LoginScreen
     @input_sms = { id: "app.wl.oscar.sandbox:id/editText" }
     @input_password = { xpath: './/android.widget.EditText[@text="Senha"]' }
     @btn_forgot_password = { id: "forgotPwdButton" }
+    @smsMsgErro = { id: "app.wl.oscar.sandbox:id/messageTextView" }
+    @btn_ok = { id: "app.wl.oscar.sandbox:id/button" }
   end
 
   def login_success(dice)
     find_element(input_cpf).send_keys(dice["cpf"])
+    # find_element(input_cpf).send_keys(Faker::CPF.numeric)
     find_element(input_phone).send_keys(dice["fone"])
     find_element(btn_continue).click
   end
@@ -21,14 +25,21 @@ class LoginScreen
     find_element(input_password).send_keys(dice["senha"])
   end
 
+  def btnokClick
+    find_element(@btn_ok).click
+  end
+
   def fill_sms(dice)
-    # 6.times { |index| find_element(:id, "#{@input_sms}#{index}").send_keys(index + 1) }
     find_element(id: "app.wl.oscar.sandbox:id/editText0").send_keys(dice["n0"])
     find_element(id: "app.wl.oscar.sandbox:id/editText1").send_keys(dice["n1"])
     find_element(id: "app.wl.oscar.sandbox:id/editText2").send_keys(dice["n2"])
     find_element(id: "app.wl.oscar.sandbox:id/editText3").send_keys(dice["n3"])
     find_element(id: "app.wl.oscar.sandbox:id/editText4").send_keys(dice["n4"])
     find_element(id: "app.wl.oscar.sandbox:id/editText5").send_keys(dice["n5"])
+  end
+
+  def msgErroSms
+    return find_element(@smsMsgErro)
   end
 
   def scroll_screen

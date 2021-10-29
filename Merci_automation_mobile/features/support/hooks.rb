@@ -6,9 +6,21 @@ Before do
   @screen = IOSScreens.new if ENV['ENV_DEVICE_PREFIX'].eql?('iOS')
 end
 
-After do
-  screenshot = driver.screenshot_as(:base64)
-  attach(screenshot, 'image,png')
+Before("@telalogin") do
+ steps %(
+  Dado que o usuário acesse a tela de login
+ )
+end
 
-  driver.quit_driver
+
+After do |scenario|
+  screenshot_name = "#{Time.now.to_i}-#{scenario.name.gsub('/', '-')}.png"
+  screenshot_path = "reports/screenshots/#{screenshot_name}"
+  Allure.add_attachment(
+    name: "Screenshot - #{scenario.name}",
+    source: @driver.screenshot(screenshot_path),
+    type: Allure::ContentType::PNG
+  )
+
+  @driver.driver_quit
 end
