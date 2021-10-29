@@ -23,15 +23,15 @@ module BaseHelpers
 
   #Método para esperar um elemento mapeado estar visível na tela por class durante 10s.
   def wait_for_class(tipo, timeout = 10)
-    driver.wait_true(timeout) do
-      exists { @driver.find_element(:class, tipo) }
+    @driver.wait_true(timeout) do
+      @driver.exists { @driver.find_element(:class, tipo) }
     end
   end
 
   #Método para esperar um elemento mapeado estar visível na tela por class e text durante 10s.
   def wait_for_class_text(tipo, text, timeout = 10)
-    wait_true(timeout) do
-      exists { @driver.find_elements(:class, tipo).text(text) }
+    @driver.wait_true(timeout) do
+      @driver.exists { @driver.find_elements(:class, tipo).text(text) }
     end
   end
 
@@ -48,7 +48,7 @@ module BaseHelpers
 
   #Método para clicar um elemento mapeado com dois atributos, id e text.
   def click_id_text(id, text)
-    find_elements(id: id).text(text).click
+    @driver.find_elements(id: id).text(text).click
   end
 
   #Método para clicar um elemento mapeado com dois atributos, xpath e text.
@@ -58,86 +58,86 @@ module BaseHelpers
 
   #Método para clicar um elemento mapeado com dois atributos, class e text.
   def click_class_text(tipo, text)
-    find_elements(class: tipo).text(text).click
+    @driver.find_elements(class: tipo).text(text).click
   end
 
   #Método para clicar em um elemento mapeado com dois elementos((ID, INDEX), (ID)).
   def click_id_index_id(id, index, id2)
-    find_elements(id: id).index(index).find_element(id: id2).click
+    @driver.find_elements(id: id).index(index).find_element(id: id2).click
   end
 
   #Método para consultar um elemento mapeado com um atributo, id.
   def find_id(id)
-    find_element(id: id)
+    @driver.find_element(id: id)
   end
 
   #Método para consultar um elemento mapeado com dois atributos, id e text.
   def find_id_text(id, text)
-    find_elements(id: id).text(text)
+    @driver.find_elements(id: id).text(text)
   end
 
   #Método para consultar e retornar o text de um elemento mapeado na tela por id.
   def find_id_get_text(id)
-    find_element(:id, id).text
+    @driver.find_element(:id, id).text
   end
 
   #Método para consultar e retornar o text de um elemento mapeado com dois atributos, id e text.
   def find_id_text_get_text(id, text)
-    find_elements(id: id).text(text).text
+    @driver.find_elements(id: id).text(text).text
   end
 
   #Método para consultar um elemento mapeado com dois atributos, class e text.
   def find_class_text(tipo, text)
-    find_elements(class: tipo).text(text)
+    @driver.find_elements(class: tipo).text(text)
   end
 
   #Método para consultar e retornar o text de um elemento mapeado com dois atributos, class e text.
   def find_class_text_get_text(tipo, text)
-    find_elements(class: tipo).text(text).text
+    @driver.find_elements(class: tipo).text(text).text
   end
 
   #Método para consultar e retornar se o mesmo está ativo. Mapeado com id.
   def find_id_get_enabled(id)
-    find_element(id: id).attribute("enabled")
+    @driver.find_element(id: id).attribute("enabled")
   end
 
   #Método para consultar e retornar se o mesmo está selecionado. Mapeado com id.
   def find_id_get_selected(id)
-    find_element(id: id).attribute("selected")
+    @driver.find_element(id: id).attribute("selected")
   end
 
   #Método para consultar e retornar se o mesmo está clicável. Mapeado com id.
   def find_id_get_clickable(id)
-    find_element(id: id).attribute("clickable")
+    @driver.find_element(id: id).attribute("clickable")
   end
 
   #Método para clicar um elemento mapeado na tela por id.
   def click_id(id)
-    find_element(id: id).click
+    find_element(:id, id).click
   end
 
   #Método para clicar um elemento mapeado na tela por xpath.
   def click_xpath(xpath)
-    find_element(xpath: xpath).click
+    @driver.find_element(:xpath, xpath).click
   end
 
   #Método para clicar um elemento mapeado na tela por class.
   def click_class(valor)
-    find_element(class: valor).click
+    @driver.find_element(:class, valor).click
   end
 
   #Método para preencher um campo mapeado na tela por id.
   def send_keys_id(id, field)
-    find_element(id: id).send_keys(field)
+    @driver.find_element(:id, id).send_keys(field)
   end
 
   #Método para preencher um campo mapeado na tela por xpath.
   def send_keys_xpath(xpath, field)
-    find_element(xpath: xpath).send_keys(field)
+    @driver.find_element(:xpath, xpath).send_keys(field)
   end
 
   #Método para preencher um campo mapeado na tela por class.
   def send_keys_class(tipo, field)
-    find_element(class: tipo).send_keys(field)
+    @driver.find_element(:class, tipo).send_keys(field)
   end
 end

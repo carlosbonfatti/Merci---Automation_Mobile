@@ -1,22 +1,21 @@
-#elementos mapeados android
+# #elementos mapeados android
 
-# elementos permission gps
- btn_permission: 'com.android.permissioncontroller:id/permission_allow_one_time_button'
- btn_access_app: 'app.wl.oscar.sandbox:id/addAccountButton'
- 
-#home
+# # elementos permission gps
+#  btn_permission: 'com.android.permissioncontroller:id/permission_allow_one_time_button'
 
-btn_wallet: 'app.wl.oscar.sandbox:id/largeLabel'
-btn_withdraw: '//android.widget.FrameLayout[@content-desc="Sacar"]/android.widget.ImageView'
-btn_menu: '//android.view.ViewGroup[ends-with(@resource-id, "id/appToolbar")]/android.widget.ImageButton'
-btn_pay: '//android.widget.FrameLayout[@content-desc="Pagar"]/android.widget.ImageView'
-btn_store: '//android.widget.FrameLayout[@content-desc="Lojinha"]/android.widget.ImageView'
+# #home
+# btn_access_app: 'app.wl.oscar.sandbox:id/addAccountButton'
+# btn_wallet: 'app.wl.oscar.sandbox:id/largeLabel'
+# btn_withdraw: '//android.widget.FrameLayout[@content-desc="Sacar"]/android.widget.ImageView'
+# btn_menu: '//android.view.ViewGroup[ends-with(@resource-id, "id/appToolbar")]/android.widget.ImageButton'
+# btn_pay: '//android.widget.FrameLayout[@content-desc="Pagar"]/android.widget.ImageView'
+# btn_store: '//android.widget.FrameLayout[@content-desc="Lojinha"]/android.widget.ImageView'
 
 
-#login
-input_cpf: './/android.widget.EditText[@text="Seu CPF"]' 
-input_phone: '//android.widget.EditText[@text="Telefone com DDD"]' 
-btn_continue: 'buttonContinue' 
-input_sms: 'editText'
-input_password: './/android.widget.EditText[@text="Senha"]' 
-btn_forgot_password: 'forgotPwdButton'
+# #login
+# input_cpf: './/android.widget.EditText[@text="Seu CPF"]' 
+# input_phone: '//android.widget.EditText[@text="Telefone com DDD"]' 
+# btn_continue: 'buttonContinue' 
+# input_sms: 'editText'
+# input_password: './/android.widget.EditText[@text="Senha"]' 
+# btn_forgot_password: 'forgotPwdButton'
