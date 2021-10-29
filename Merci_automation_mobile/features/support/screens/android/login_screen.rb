@@ -1,7 +1,6 @@
 class LoginScreen
-  # include Capybara::DSL
-  attr_accessor :input_cpf, :input_phone, :btn_continue,
-                :input_sms, :input_password, :btn_forgot_password
+  attr_reader :input_cpf, :input_phone, :btn_continue,
+              :input_sms, :input_password, :btn_forgot_password
 
   def initialize
     @input_cpf = { xpath: './/android.widget.EditText[@text="Seu CPF"]' }
@@ -15,18 +14,20 @@ class LoginScreen
   end
 
   def login_success(dice)
+    # send_keys_xpath(input_cpf, dice["cpf"])
     find_element(input_cpf).send_keys(dice["cpf"])
     # find_element(input_cpf).send_keys(Faker::CPF.numeric)
     find_element(input_phone).send_keys(dice["fone"])
-    find_element(btn_continue).click
+    click_id(btn_continue)
   end
 
   def password(dice)
-    find_element(input_password).send_keys(dice["senha"])
+    send_keys_xpath(input_password, dice["senha"])
+    # find_element(input_password).send_keys(dice["senha"])
   end
 
   def btnokClick
-    find_element(@btn_ok).click
+    click_id(btn_ok)
   end
 
   def fill_sms(dice)
