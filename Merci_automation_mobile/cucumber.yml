@@ -6,3 +6,4 @@ android: DEVICE=android
 iOS: DEVICE=iOS
 device_android: ENV_DEVICE_PREFIX=android
 device_iOS: ENV_DEVICE_PREFIX=iOS
+allure: --format AllureCucumber::CucumberFormatter --out=logs

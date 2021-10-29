@@ -1,21 +1,21 @@
-class HomeScreen
+class LogoScreen
   attr_reader :menu, :btn_add_account, :loading, :btn_permission, :btn_access_app
 
   def initialize
     # @btn_menu = EL_ANDROID["btn_menu"]
     # @btn_add_account = EL_ANDROID["btn_add_account"]
     # @loading = { id: "progressBarBig" }
-    @btn_permission = { id: "com.android.permissioncontroller:id/permission_allow_one_time_button" }
-    @btn_access_login_screen = { id: "app.wl.oscar.sandbox:id/addAccountButton" }
+    @btn_permission = EL_ANDROID["btn_permission"]
+    @btn_access_app = EL_ANDROID["btn_access_app"]
   end
 
   def access_login_screen
-    find_element(@btn_access_login_screen).click
+    click_id(btn_access_app)
   end
 
   def access_permission
-    # BaseHelpers.click_id(@btn_permission)
-    find_element(@btn_permission).click
+    click_id(btn_permission)
+    # find_element(id: btn_permission).click
   end
 
   def access_menu
