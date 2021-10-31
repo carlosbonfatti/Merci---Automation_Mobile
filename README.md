@@ -1,10 +1,12 @@
-#Framework Dock - Merci  para testes automatizados de Aplicativos Mobile
-*Esse projeto entrega, uma estrutura completa para automação para testes Mobile, usando os melhores frameworks e práticas.*
+## Framework Dock - Merci  para testes automatizados de Aplicativos Mobile
+
+# Esse projeto entrega, uma estrutura completa para automação para testes Mobile, usando os melhores frameworks e práticas.
 
 Testes móveis E2E do cliente
 
-O que é? : octocat:
-É um pacote de automação para os aplicativos Merci usando Ruby e Appium.
+## O que é? :
+
+# É um pacote de automação para os aplicativos Merci usando Ruby e Appium.
 
 Configurar 🔨
 Instale o Ruby a partir daqui . Versão recomendada:> = 3.0.2
