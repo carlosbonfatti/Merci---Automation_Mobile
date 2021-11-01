@@ -81,15 +81,25 @@ $ appium
 $ cucumber -p ios_local -t @tag
 
 Relatórios de teste 📄
+
 Instalar Relatório Allure:
+
 $ npm install -g allure-commandline
+
 Execute os testes
+
 Gerar relatório:
-$ allure serve reports/allure
+
+$ allure serve reports/allure 
+
 Execução do AWS Device Farm
+
 Configure o conjunto de testes Appium seguindo [estas] instruções ( https://docs.aws.amazon.com/pt_br/devicefarm/latest/developerguide/test-types-appium.html#test-types-appium-prepare ) Observação: Comando para agrupar o código-fonte:
+
 $ cd path/to/project
+
 $ zip -r MyTests.zip config features Gemfile vendor Gemfile.lock reports
+
 Acesse o AWS Device Farm e crie uma execução de teste por meio do AWS Device Farm Console seguindo [estas] instruções ( https://docs.aws.amazon.com/pt_br/devicefarm/latest/developerguide/how-to-create-test- run.html # how-to-create-test-run-console ) Observação: use aws_device_farm_sample.yml como exemplo
 Autor ✒️
 Merci
