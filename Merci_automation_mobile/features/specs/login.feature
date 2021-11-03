@@ -15,7 +15,7 @@ Cenario: Login com sucesso
 @loginFailsms
 Cenario: Login falho sms
   Quando todas as informações de login <dado> forem preenchidas porem o sms incorreto
-  Entao o usuario vera a mensagem "O código informado está incorreto. Vamos iniciar novamente do zero?"
+  Entao o usuario vera a mensagem de erro sms "O código informado está incorreto. Vamos iniciar novamente do zero?"
   Exemplos:
     | dado        | 
     | "login_sms" |
@@ -23,7 +23,16 @@ Cenario: Login falho sms
 @loginFailsenha
 Cenario: Login falho senha
   Quando todas as informações de login <dado> forem preenchidas porem senha esteja incorreta
-  Entao o usuario vera a mensagem "Poxa, a senha está errada. Vamos tentar novamente?"
+<<<<<<< HEAD
+  Entao o usuario vera a mensagem de erro senha "Poxa, a senha está errada. Vamos tentar novamente?"
   Exemplos:
     | dado         | 
     | "login_senha"| 
+
+@CPFinvalido
+Cenario: CPF invalido
+  Quando o CPF <dado> inserido for invalido 
+  Entao o usuario vera mensagem "CPF inválido"
+    Exemplos:
+    | dado         | 
+    | "CPFinvalido"|

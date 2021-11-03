@@ -3,10 +3,20 @@ require "appium_console"
 require "appium_lib"
 require "capybara"
 require "cucumber"
+require "cpf_faker"
 require "faker"
 require "pry"
 require "rspec"
 require "selenium-webdriver"
+
+require "fileutils"
+require_relative "./utils/user_types/base_helpers"
+
+include BaseHelpers
+
+# limpa os logs e os scrennshots
+FileUtils.rm_f(Dir.glob("logs/*.json"))
+FileUtils.rm_f(Dir.glob("logs/*.png"))
 
 EL_ANDROID = YAML.load_file(File.join(Dir.pwd, "features/support/config/elements/android/elements_android.yml"))
 
