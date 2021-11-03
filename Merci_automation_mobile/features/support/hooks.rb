@@ -14,7 +14,6 @@ Before("@telalogin") do
  )
 end
 
-
 After do |scenario|
 
   screenshot_name = "#{Time.now.to_i}-#{scenario.name.gsub('/', '-')}.png"

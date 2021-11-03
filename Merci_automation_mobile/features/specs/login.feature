@@ -23,6 +23,7 @@ Cenario: Login falho sms
 @loginFailsenha
 Cenario: Login falho senha
   Quando todas as informações de login <dado> forem preenchidas porem senha esteja incorreta
+<<<<<<< HEAD
   Entao o usuario vera a mensagem de erro senha "Poxa, a senha está errada. Vamos tentar novamente?"
   Exemplos:
     | dado         | 
@@ -34,4 +35,4 @@ Cenario: CPF invalido
   Entao o usuario vera mensagem "CPF inválido"
     Exemplos:
     | dado         | 
-    | "CPFinvalido"| 
+    | "CPFinvalido"|

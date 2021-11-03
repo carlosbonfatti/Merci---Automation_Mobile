@@ -50,6 +50,10 @@ class LoginScreen
     click(bt_ok_senha)
   end
 
+  def btnokClick
+    find_element(@btn_ok).click
+  end
+
   def fill_sms(dice)
     send_keys(bt_0, dice["n0"])
     send_keys(bt_1, dice["n1"])
@@ -65,6 +69,10 @@ class LoginScreen
 
   def cpf_invalido_msg
     return find_element(msg_cpf_invalido)
+  end
+
+  def msgErroSms
+    return find_element(@smsMsgErro)
   end
 
   def scroll_screen
