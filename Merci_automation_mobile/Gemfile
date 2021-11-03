@@ -1,8 +1,12 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'appium_console'
-gem 'appium_lib'
-gem 'cucumber', '5.2'
-gem 'pry'
-gem 'rspec'
-gem 'selenium-webdriver'
+gem "appium_console"
+gem "appium_lib"
+gem "capybara"
+gem "cucumber", "5.2"
+gem "chromedriver-helper"
+gem "faker"
+gem "page-object"
+gem "pry"
+gem "rspec"
+gem "selenium-webdriver"
